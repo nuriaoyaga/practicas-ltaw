@@ -1,0 +1,67 @@
+{% extends "my_shop/index2.html" %}
+{% load static %}
+{% load staticfiles %}
+{% block title %}
+<title>ERDH-{{ product_type }}</title>
+{% endblock %}
+{% block extrastyle %}
+  table {
+    width: 100%;
+    align-self: center;
+  }
+
+  table a {
+    color: black;
+    padding: 0px 26px;
+    text-decoration: none;
+  }
+
+  .info-right {
+    align-self: left;
+    padding-left: 50px
+  }
+
+  td {
+    border-bottom: 1px solid #ddd;
+{% endblock %}
+
+{% block header %}
+<h1>{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h3> Mis {{ product_type }} </h3>
+  {% if product_list %}
+    {% if product_type == "libros" %}
+      <table>
+      {% for book in product_list %}
+        {% if forloop.counter|divisibleby:2 %}
+          <td class="info-right"><a href="/tienda/libros/{{ book.author }}/{{ book.title }}">{{ book.title }} - {{ book.author}}</a></td>
+          <td class="image"><img src="{% static book.image %}" width="70"></img></td>
+        </tr>
+        {% else %}
+        <tr>
+          <td><a href="/tienda/libros/{{ book.author }}/{{ book.title }}">{{ book.title }} - {{ book.author}}</a></td>
+          <td class="image"><img src="{% static book.image %}" width="70"></img></td>
+        {% endif %}
+      {% endfor %}
+      </table>
+    {% elif product_type == "discos" %}
+      <ul>
+      {% for disk in product_list %}
+          <li><a href="/tienda/discos/{{ disk.author }}/{{ disk.title }}">{{ disk.title }} - {{ disk.author}}</a></li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <ul>
+      {% for bike in product_list %}
+          <li><a href="/tienda/bicicletas/{{ bike.brand }}/{{ bike.model }}">{{ bike.model }} de {{ bike.brand }}</a></li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% else %}
+      <p>No hay {{ product_type }}.</p>
+  {% endif %}
+</div>
+{% endblock %}

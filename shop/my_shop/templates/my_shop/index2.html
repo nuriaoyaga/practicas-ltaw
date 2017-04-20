@@ -1,0 +1,76 @@
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/generalStyle.css' %}">
+  {% block title%}
+  <title>ERDH</title>
+  {% endblock %}
+  <style>
+  {% block extrastyle%}
+  {% endblock %}
+  </style>
+</head>
+<body>
+
+  <div class="header-footer">
+    <header>
+    {% block header %}
+      <h1>EL RINCÓN DEL HOBBIE</h1>
+      <h3>Los mejores precios para tu tiempo libre. </h3>
+    {% endblock %}
+    </header>
+  </div>
+  <nav class="nav">
+    <ul>
+      <li><a href="/tienda/">Ver todo</a></li>
+      <li><a href="/tienda/discos">Discos</a></li>
+      <li><a href="/tienda/libros">Libros</a></li>
+      <li><a href="/tienda/bicicletas">Bicicletas</a></li>
+      <li><a href="/tienda/carrito">Mi Carro</a></li>
+    </ul>
+  </nav>
+  {% block content %}
+  <div>
+    <h3> Últimos discos </h3>
+    {% if latest_music_list %}
+        <ul>
+        {% for disk in latest_music_list %}
+            <li><a href="/tienda/discos/{{ disk.author }}/{{ disk.title }}">{{ disk.title }} - {{ disk.author}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay discos.</p>
+    {% endif %}
+  </div>
+  <div>
+    <h3> Últimos libros </h3>
+    {% if latest_book_list %}
+        <ul>
+        {% for book in latest_book_list %}
+            <li><a href="/tienda/libros/{{ book.author }}/{{ book.title }}">{{ book.title }} - {{ book.author}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay libros.</p>
+    {% endif %}
+  </div>
+  <div>
+    <h3> Últimas bicicletas </h3>
+    {% if latest_bike_list %}
+        <ul>
+        {% for bike in latest_bike_list %}
+            <li><a href="/tienda/bicicletas/{{ bike.brand }}/{{ bike.model }}">{{ bike.model }} de {{ bike.brand }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay bicicletas.</p>
+    {% endif %}
+  </div>
+  {% endblock %}
+  <div class="header-footer">
+  <footer>
+      &copy; Nuria Oyaga de Frutos, 2017
+  </footer>
+  </div>
+</body>
+</html>

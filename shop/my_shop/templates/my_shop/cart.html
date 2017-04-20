@@ -1,0 +1,50 @@
+{% extends "my_shop/index2.html" %}
+{% load static %}
+{% load staticfiles %}
+{% block title %}
+<title>ERDH-carrito</title>
+{% endblock %}
+{% block extrastyle %}
+table {
+  width: 100%;
+  padding: 15px;
+}
+td{
+	text-align:center;
+  padding: 10px;
+}
+.data{
+  text-align:left;
+}
+th{
+  font-size: large;
+  padding: 10px;
+}
+#total{
+  border-top: 3px solid #696969;
+}
+#last{
+  padding-bottom: 20px;
+}
+{% endblock %}
+
+{% block header %}
+<h1>TU COMPRA</h1>
+{% endblock %}
+
+{% block content %}
+<div id="items">
+  <table id="products">
+    <tr>
+      <th class="data"><u>Producto</u></th>
+      <th class="data"><u>Información</u></th>
+      <th><u>Categoría</u></th>
+      <th><u>Precio</u></th>
+    </tr>
+  </table>
+  <center>
+    <input type="button" onclick="" value="Realizar pedido" style="height:40px">
+  </ceter>
+</div>
+<script src= {% static 'js/showCart.js'%}></script>
+{% endblock %}

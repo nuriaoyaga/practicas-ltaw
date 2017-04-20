@@ -1,0 +1,48 @@
+Books:
+
+#1
+    title: Las ventanas del cielo
+    author: Gonzalo Giner
+    gender: Narrativa histórica
+    price: 22,50
+    editorial: Planeta
+    pub_date: 2017
+    image: book1.jpg
+
+#2
+    title: La magia de ser nosotros
+    author: Elisabet Benavent
+    gender: Narrativa romántica
+    price: 16,90
+    editorial: Suma
+    pub_date: 2017
+    image: book2.jpg
+
+#3
+    title: Algo tan sencillo como estar contigo
+    author: Blue Jeans
+    gender: Juvenil
+    price: 18,90
+    editorial: Planeta
+    pub_date: 2017
+    image: book3.jpg
+
+#4
+    title: Casi sin querer
+    author: DEFREDS JOSE. A. GOMEZ IGLESIAS 
+    gender: Poesía contemporanea española
+    price: 12,00
+    editorial: Frida
+    pub_date: 2015
+    image: book4.jpg
+
+#5
+    title: El principito
+    author: ANTOINE DE SAINT-EXUPERY
+    gender: Infantil
+    price: 5,95
+    editorial: Salamandra
+    pub_date: 2008
+    image: book5.jpg
+
+

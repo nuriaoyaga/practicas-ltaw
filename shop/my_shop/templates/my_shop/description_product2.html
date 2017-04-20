@@ -1,0 +1,78 @@
+{% extends "my_shop/index2.html" %}
+{% load static %}
+{% load staticfiles %}
+{% block title %}
+<title>ERDH-producto</title>
+{% endblock %}
+{% block extrastyle %}
+table {
+  width: 100%;
+}
+{% endblock %}
+
+{% block header %}
+<h1>EL RINCON DEL HOBBIE: TU PRODUCTO</h1>
+{% endblock %}
+
+{% block content %}
+<script src= {% static 'js/purchase.js'%}></script>
+
+<div>
+  {% if product_data %}
+    <table>
+      <tr>
+    {% if product_type == "libros" %}
+      <td style="padding-left:40px" width="27%">
+        <img src="{% static product_data.image %}" width="200" height="300">
+      </td>
+      <td><ul>
+          <li>Titulo: {{ product_data.title }}</li>
+          <li>Autor: {{ product_data.author }}</li>
+          <li>Precio: {{ product_data.price }} €</li>
+          <li>Fecha de lanzamiento: {{ product_data.pub_date }}</li>
+          <li>Genero: {{ product_data.gender }}</li>
+          <li>Editorial: {{ product_data.editorial }}</li>
+          <li style="list-style-type: none; text-align:center; padding-top:20px">
+            <input type="button" onclick="addProduct('{{product_data.title}}','{{product_data.author}}','{{product_type}}','{{product_data.price}}')" value="Añadir al carro" style="height:40px">
+          </li>
+      </ul></td>
+    {% elif product_type == "discos" %}
+      <td style="padding-left:40px" width="33%">
+        <audio controls autoplay>
+          <source src="{% static product_data.audio %}" type="audio/mpeg">
+        </audio>
+      </td>
+      <td><ul>
+          <li>Titulo: {{ product_data.title }}</li>
+          <li>Interprete: {{ product_data.author }}</li>
+          <li>Precio: {{ product_data.price }} €</li>
+          <li>Fecha de lanzamiento: {{ product_data.pub_date }}</li>
+          <li>Genero: {{ product_data.gender }}</li>
+          <li style="list-style-type: none; text-align:center; padding-top:20px">
+            <input type="button" onclick="addProduct('{{product_data.title}}','{{product_data.author}}','{{product_type}}','{{product_data.price}}')" value="Añadir al carro" style="height:40px">
+          </li>
+      </ul></td>
+    {% else %}
+      <td style="padding-left:40px" width="40%">
+        <video controls autoplay height="200">
+          <source src="{% static product_data.video %}" type="video/mp4">
+        </video>
+      </td>
+      <td><ul>
+          <li>Modelo: {{ product_data.model }}</li>
+          <li>Marca: {{ product_data.brand }}</li>
+          <li>Precio: {{ product_data.price }} €</li>
+          <li>Color: {{ product_data.color }}</li>
+          <li>Pulgadas: {{ product_data.wheel_size }}</li>
+          <li style="list-style-type: none; text-align:center; padding-top:20px">
+            <input type="button" onclick="addProduct('{{product_data.model}}','-','{{product_type}}','{{product_data.price}}')" value="Añadir al carro" style="height:40px">
+          </li>
+      </ul></td>
+    {% endif %}
+    </tr>
+  </table>
+  {% else %}
+      <p>No se encontro el producto: {{ product_type }}.</p>
+  {% endif %}
+</div>
+{% endblock %}
