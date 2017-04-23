@@ -1,0 +1,41 @@
+Disks:
+
+#1
+    title: Sobre el amor y sus efectos secundarios
+    author: Morat
+    gender: Pop-Rock
+    price: 14,99
+    pub_date: 17-Junio-2016
+    sound: music1.mp3
+
+#2
+    title: Quítate las gafas
+    author: Melendi
+    gender: Pop-Rock
+    price: 14,99
+    pub_date: 11-Noviembre-2016
+    sound: music2.mp3
+#3
+    title: El circo de Teresa Rabal
+    author: Teresa Rabal
+    gender: Infantil
+    price: 17,95
+    pub_date: 5-diciembre-2011
+    sound: music3.mp3
+
+#4
+    title: Divide
+    author: Ed Sheeran
+    gender: Pop
+    price: 18,99
+    pub_date: 3-Marzo-2017
+    sound: music4.mp3
+
+#5
+    title: Huyendo conmigo de mi
+    author: Fito & fitipaldis
+    gender: Rock
+    price: 6,99
+    pub_date: 28-octubre-2014
+    sound: music5.mp3
+

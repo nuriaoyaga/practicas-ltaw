@@ -1,0 +1,41 @@
+Bikes:
+
+#1
+    model: BTT Rockrider 340
+    brand: B'TWIN
+    color: Azul
+    wheel_size: 26
+    price: 199,99
+    video: bike1.mp4
+
+#2
+    model: M920
+    brand: B-PRO
+    color: Negro
+    wheel_size: 29
+    price: 449,00
+    video: bike2.mp4
+
+#3
+    model: United recruit
+    brand: BMX
+    color: Rojo
+    wheel_size: 18
+    price: 332,90
+    video: bike3.mp4
+
+#4
+    model: META AM V3
+    brand: Commencal
+    color: Rojo
+    wheel_size: 27,5
+    price: 1599,00
+    video: bike4.mp4
+
+#5
+    model: MISTIGIRL 320
+    brand: B'TWIN
+    color: Verde
+    wheel_size: 20
+    price: 129,99
+    video: bike5.mp4
