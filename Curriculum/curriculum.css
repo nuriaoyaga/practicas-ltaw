@@ -1,0 +1,77 @@
+body {
+  background-image: url("images/background.jpg");
+  padding-bottom: 35px;
+}
+
+h1 {
+  padding-left: 15px;
+}
+
+div {
+  border-color: red;
+  border-style: solid;
+}
+
+footer {
+  width: 100%;
+  bottom: 0;
+  position:fixed;
+  height: 35px;
+}
+
+div.contact {
+  padding-left: 15px;
+  width:18%;
+  float: left;
+}
+
+div.data {
+  width: 78%;
+  float: right;
+  background-image: url("images/aboutme.jpg");
+  margin-right: 15px;
+}
+
+div.icons {
+  padding-top: 13px;
+  float: left;
+  width: 15%
+}
+
+div.info {
+  width: 80%;
+  float: right;
+}
+
+div.categories {
+  color: black;
+  margin: 20px 20px 20px 20px;
+  padding: 20px;
+  border-radius: 15px;
+  border-color: black;
+  border-style: solid;
+  background-color: rgba(236,240,241,0.7);
+}
+
+.icon {
+  width:30px
+}
+
+#photo {
+  padding-top: 20px;
+  max-width: 180px;
+  width: 100%;
+  border-radius: 50%;
+  margin-left: 10%;
+}
+
+#rights {
+  float: right;
+  width: 17%;
+  padding-bottom: 15px;
+}
+
+#modification {
+  float: left;
+  width: 30%;
+}
