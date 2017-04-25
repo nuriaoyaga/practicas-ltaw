@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  <link rel="stylesheet" href="css/generalStyle.css">
+  <title>ERDH-Carrito</title>
+  <style>
+    table {
+      width: 100%;
+      padding: 15px;
+    }
+    td{
+      text-align:center;
+      padding: 10px;
+    }
+    .data{
+      text-align:left;
+    }
+    th{
+      font-size: large;
+      padding: 10px;
+    }
+    #total{
+      border-top: 3px solid #696969;
+    }
+    #last{
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-footer">
+    <header>
+      <h1>TU CARRITO DE LA COMPRA</h1>
+    </header>
+  </div>
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">Ver todo</a></li>
+      <li><a href="disks.html">Discos</a></li>
+      <li><a href="books.html">Libros</a></li>
+      <li><a href="bikes.html">Bicicletas</a></li>
+      <li><a href="cart.html">Tu carrito</a></li>
+    </ul>
+  </nav>
+  <div id="items">
+    <table id="products">
+      <tr>
+        <th class="data"><u>Producto</u></th>
+        <th class="data"><u>Información</u></th>
+        <th><u>Categoría</u></th>
+        <th><u>Precio</u></th>
+      </tr>
+    </table>
+    <center>
+      <input type="button" onclick="localStorage.setItem('cart', JSON.stringify([]));; console.log(localStorage)" value="Realizar pedido" style="height:40px">
+    </ceter>
+  </div>
+  <script src= 'js/showCart.js'></script>
+  <div class="header-footer">
+    <footer>
+        &copy; Nuria Oyaga de Frutos, 2017
+    </footer>
+  </div>
+</body>
+</html>
+<!--Vaciar localStorage.clear()-->
