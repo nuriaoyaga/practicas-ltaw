@@ -10,6 +10,7 @@
   </style>
 </head>
 <body>
+  <script src= 'js/purchase.js'></script>
   <div class="header-footer">
     <header>
       <h1>TU LIBRO</h1>
@@ -20,6 +21,7 @@
       <li><a href="disks.html">Discos</a></li>
       <li><a href="books.html">Libros</a></li>
       <li><a href="bikes.html">Bicicletas</a></li>
+      <li><a href="cart.html">Tu carrito</a></li>
     </ul>
   </nav>
   <div>
@@ -35,6 +37,9 @@
           <li>Fecha de lanzamiento: 2017</li>
           <li>Genero: Juvenil</li>
           <li>Editorial: Planeta</li>
+          <li style="list-style-type: none; text-align:center; padding-top:20px">
+            <input type="button" onclick="addProduct('Algo tan sencillo como estar contigo','Blue Jeans','libros','18.90')" value="Añadir al carro" style="height:40px">
+          </li>
       </ul></td>
       </tr>
     </table>
