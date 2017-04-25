@@ -1,0 +1,98 @@
+<!DOCTYPE>
+<html>
+<head>
+   <title> Práctica Interacción Cliente-Servidor </title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link type="text/css" href="/style.css" rel="stylesheet" />
+</head>
+<body>
+   <h1> Práctica 5: Formularios en Node.js </h1>
+
+	<form method="post">
+		<fieldset>
+			<legend>DATOS PERSONALES</legend>
+			Nombre*:
+			<input type="text" name="nombre" placeholder="Nombre" required>
+
+			Primer Apellido*:
+			<input type="text" name="apellido1" placeholder="Primer Apellido" size="30" required>
+
+			<input type="radio" name="genero" value="Mujer" checked> Mujer
+  			<input type="radio" name="genero" value="Hombre"> Hombre
+			<br><br>
+
+			Tipo de vía*:
+			<input list="via" name="via" placeholder="Tipo de vía" required>
+			<datalist id="via">
+				<option value="Calle">
+				<option value="Avenida">
+				<option value="Paseo">
+				<option value="Carretera">
+				<option value="Camino">
+				<option value="Travesía">
+			</datalist>
+
+			Dirección*:
+			<input type="text" name="direccion" placeholder="Dirección" size="40" required>
+
+			Número*:
+			<input type="text" name="numero" placeholder="Núm" size="5" required>
+			Piso*:
+			<input type="text" name="piso" placeholder="Piso" size="5" required>
+			Puerta*:
+			<input type="text" name="puerta" placeholder="Puerta" size="5" required>
+			<br><br>
+
+			Localidad*:
+			<input type="text" name="localidad" placeholder="Localidad" required>
+
+			Provincia*:
+			<input type="text" name="provincia" placeholder="Provincia" required>
+
+			Código Postal*:
+			<input type="text" name="codpostal" pattern="[0-9]{5}" title="Código Postal" placeholder="Código Postal" required>
+
+			<br><br>
+
+			Fecha de nacimiento:
+			<input type="date" name="bday">
+			<br><br>
+
+			E-mail*:
+  			<input type="email" name="email" placeholder="e-mail" size ="40" required>
+
+  			Télefono:
+			<input type="text" name="telefono" pattern="[0-9]{9}" title="Número de télefono" placeholder="Núm. Teléfono">
+
+			Nota: Los campos con * son obligatorios
+		</fieldset>
+
+		<br>
+
+		<fieldset>
+			<legend>DATOS DEL PRODUCTO</legend>
+			Elige tu modelo:
+			<input type="checkbox" name="bici" value="Montana"> Bici Montaña
+  			<input type="checkbox" name="bici" value="BMX"> Bici BMX
+  			<input type="checkbox" name="bici" value="Electrica"> Bici Eléctrica
+  			<input type="checkbox" name="bici" value="Estatica"> Bici Estática
+			<br><br>
+
+			Color:
+  			<input type="color" name="color" value="#ff0000">
+
+  			Cantidad:
+			<input type="number" name="cantidad" value="1" max="10">
+  			<br><br>
+
+			Mensaje para el vendedor(opcional):<br>
+			<textarea name="message" rows="10" cols="70" maxlength="400"></textarea>
+		</fieldset>
+
+		<br>
+		<input type="submit" value="Enviar">
+
+	</form>
+
+</body>
+</html>
