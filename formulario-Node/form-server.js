@@ -6,7 +6,7 @@ var fs = require('fs'); // sistema de archivo
 http.createServer(function(request, response) {
   var headers = request.headers;
   var url = request.url;
-  var ruta = '.' + ((request.url=='/') ? '/index.html' : request.url); //si la ruta esta vacia carga index.html
+  var ruta = '.' + ((request.url=='/') ? '/formulario.html' : request.url); //si la ruta esta vacia carga index.html
 	var extension = path.extname(ruta); // obtiene la extension del archivo
 
   var contentType;
@@ -31,7 +31,13 @@ http.createServer(function(request, response) {
   }
 
   if (request.method == "GET"){
-    showContent(ruta,ContentType,response,request);
+    var check_root = ruta.split("?");
+		if (check_root.length > 1){
+			check_root = check_root[1].split("&");
+			processForm(response,check_root,"GET");
+    }else{
+      showContent(ruta,ContentType,response,request);
+    }
   }else if(request.method == "POST"){
     processForm(response,request,"POST"); //El formulario llega por post
   }
@@ -74,24 +80,36 @@ function showContent(ruta,ContentType,response,request){
 function processForm(response,request,method){
 	var body = []
   var responseBody = []
-  request.on('error', function(err) {
-    console.error(err);
-  }).on('data', function(chunk) { //Se meten los datos en un array y se concatenan al final
-    body.push(chunk);
-  }).on('end', function() {
-    body = Buffer.concat(body).toString();
-
-    var str = body.split('&');
-    for (i=0; i<str.length ; i++){
-      var campo = str[i].split('=');
-      responseBody = responseBody + campo[0] + ' = ' + campo[1]+ '\n';
-    }
+  if (method == "GET"){
+    console.log("METODO GET")
+		for (var i = 0; i < request.length; i++) {
+			field = request[i].split("=");
+			responseBody = responseBody + field[0] + ' = ' + field[1] + ' \n'
+		}
     response.writeHead(200,{
       'content-type' : 'text/plain'
     });
-    response.end(responseBody);
-    console.log(responseBody)
-  });
+		response.end(responseBody);
+  }else{
+    console.log("METODO POST")
+    request.on('error', function(err) {
+      console.error(err);
+    }).on('data', function(chunk) { //Se meten los datos en un array y se concatenan al final
+      body.push(chunk);
+    }).on('end', function() {
+      body = Buffer.concat(body).toString();
+
+      var str = body.split('&');
+      for (i=0; i<str.length ; i++){
+        var campo = str[i].split('=');
+        responseBody = responseBody + campo[0] + ' = ' + campo[1]+ '\n';
+      }
+      response.writeHead(200,{
+        'content-type' : 'text/plain'
+      });
+      response.end(responseBody);
+    });
+  }
 
 
 

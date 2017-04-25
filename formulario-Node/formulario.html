@@ -1,16 +1,26 @@
 <!DOCTYPE>
 <html>
 <head>
-   <title> Práctica Interacción Cliente-Servidor </title>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <link type="text/css" href="/style.css" rel="stylesheet" />
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  <link rel="stylesheet" href="generalStyle.css">
+  <title>ERDH</title>
 </head>
 <body>
-   <h1> Práctica 5: Formularios en Node.js </h1>
+  <script>
+      function methdSelect(){
+        form = document.getElementById("formulario");
+        metodo = form.metodo.value
+        form.method = metodo;
+        console.log(form.method)
+      }
+  </script>
 
-	<form method="post">
-		<fieldset>
+  <h1> FORMULARIO DE ENVIO </h1>
+
+	<form id="formulario" method="get" >
+    <div>
 			<legend>DATOS PERSONALES</legend>
+      <br>
 			Nombre*:
 			<input type="text" name="nombre" placeholder="Nombre" required>
 
@@ -35,20 +45,10 @@
 			Dirección*:
 			<input type="text" name="direccion" placeholder="Dirección" size="40" required>
 
-			Número*:
-			<input type="text" name="numero" placeholder="Núm" size="5" required>
-			Piso*:
-			<input type="text" name="piso" placeholder="Piso" size="5" required>
-			Puerta*:
-			<input type="text" name="puerta" placeholder="Puerta" size="5" required>
-			<br><br>
-
-			Localidad*:
-			<input type="text" name="localidad" placeholder="Localidad" required>
-
 			Provincia*:
 			<input type="text" name="provincia" placeholder="Provincia" required>
 
+      <br><br>
 			Código Postal*:
 			<input type="text" name="codpostal" pattern="[0-9]{5}" title="Código Postal" placeholder="Código Postal" required>
 
@@ -63,14 +63,13 @@
 
   			Télefono:
 			<input type="text" name="telefono" pattern="[0-9]{9}" title="Número de télefono" placeholder="Núm. Teléfono">
-
+      <br><br>
 			Nota: Los campos con * son obligatorios
-		</fieldset>
+		</div>
 
-		<br>
-
-		<fieldset>
+		<div>
 			<legend>DATOS DEL PRODUCTO</legend>
+      <br>
 			Elige tu modelo:
 			<input type="checkbox" name="bici" value="Montana"> Bici Montaña
   			<input type="checkbox" name="bici" value="BMX"> Bici BMX
@@ -81,17 +80,17 @@
 			Color:
   			<input type="color" name="color" value="#ff0000">
 
-  			Cantidad:
-			<input type="number" name="cantidad" value="1" max="10">
-  			<br><br>
+      <br><br>
 
 			Mensaje para el vendedor(opcional):<br>
+      <br>
 			<textarea name="message" rows="10" cols="70" maxlength="400"></textarea>
-		</fieldset>
-
-		<br>
-		<input type="submit" value="Enviar">
-
+      <br>
+      <input type="radio" name="metodo" value="get" onclick="methdSelect()"> GET
+  			<input type="radio" name="metodo" value="post" onclick="methdSelect()"> POST
+      <br>
+      <input type="submit" value="Enviar" style="height:40px;">
+		</div>
 	</form>
 
 </body>
